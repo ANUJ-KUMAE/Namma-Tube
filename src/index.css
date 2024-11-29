@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #cfcdfa;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-move {
+  animation: move 1s infinite ease-in-out;
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fade-in-animation {
+    animation: fadeIn 1s forwards;
+  }
+
+  .delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+
+/* Apply the horizontal scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 30s linear infinite; /* 30s duration for continuous scroll */
+  gap: 1rem; /* Space between testimonials */
+}
+
+/* Ensure content does not overflow and hides */
+.overflow-hidden {
+  overflow: hidden;
+}
+
